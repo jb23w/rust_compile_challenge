@@ -1,16 +1,16 @@
 // SwordとHeroのメンバ変数nameをstr型のまま、lifetime識別子を使用してコンパイルが通るように修正してください
-struct Sword {
-    name: str,
+struct Sword<'a> {
+    name: &'a str,
     damage: i32,
 }
 
-struct Hero {
-    name: str,
+struct Hero<'b> {
+    name: &'b str,
     hp: i32,
-    sword: Option<Sword>,
+    sword: Option<Sword<'b>>,
 }
 
-impl Hero {
+impl Hero<'_> {
     pub fn attack(&self) {
         println!("{}は攻撃した", self.name);
         if let Some(s) = &self.sword {

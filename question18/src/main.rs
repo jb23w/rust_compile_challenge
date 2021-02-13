@@ -24,7 +24,9 @@ impl Car for SportsCar {
     }
 }
 
-fn hoge(c: T) -> i32 {
+fn hoge<T>(c: T) -> i32 
+where T:Car,
+{
     c.speed()
 }
 

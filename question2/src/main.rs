@@ -5,6 +5,6 @@ fn main() {
 
 fn square(x: Option<i64>) -> Option<i64> {
     match x {
-        Ok(i) => Ok(i * i),
+        i => Some(i.unwrap() * i.unwrap()),
     }
 }

@@ -3,6 +3,7 @@ struct Latlng<T> {
     lat: T,
     lng: T,
 }
+#[derive(Copy,Clone)]
 struct Hoge {
     a: i32,
 }
@@ -18,6 +19,12 @@ where
         println!("lat:{} lng:{}", self.lat, self.lng);
     }
 }
+impl std::fmt::Display for Hoge {
+    fn fmt(&self,f:&mut std::fmt::Formatter) -> std::fmt::Result{
+        write!(f,"{}",self.a)
+    }
+}
+
 
 fn main() {
     let hoge = Hoge { a: 100 };

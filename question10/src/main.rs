@@ -5,10 +5,10 @@ fn main() {
     println!("{:?}", value);
 }
 
-fn get(&ary: &[i32], index: i64) -> Option<i64> {
+fn get(ary: &[i32], index: i64) -> Option<i64> {
     if ary.len() == 0 {
         None
     } else {
-        ary.get(index)
+        Some(*ary.get(index as usize).unwrap() as i64)
     }
 }

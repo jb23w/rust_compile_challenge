@@ -16,7 +16,7 @@ const ETO: [&str; 12] = [
 fn eto(year: u32) {
     let org = 0;
     let diff = ((year - org) % 12);
-    println!("{}", ETO[diff]);
+    println!("{}", ETO[diff as usize]);
 }
 fn main() {
     // 干支表示
